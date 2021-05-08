@@ -5,7 +5,7 @@ function UI() {
   return (
     <div className="container">
       <h1>Calculator</h1>
-   
+
     </div>
   );
 }
