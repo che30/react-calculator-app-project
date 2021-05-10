@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function Result(props) {
   return (
-    <div>
+    <div className="result">
       {' '}
       {props.result}
     </div>

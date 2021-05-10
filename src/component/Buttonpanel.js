@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 const Buttonpanel = () => (
-  <div>
+  <div className="buttons-div">
     <div className="board-row">
       <Button value="AC" />
       <Button value="+" />
