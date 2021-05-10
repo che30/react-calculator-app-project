@@ -5,7 +5,7 @@ const Buttonpanel = () => (
   <div className="buttons-div">
     <div className="board-row">
       <Button value="AC" />
-      <Button value="+" />
+      <Button value="+/-" />
       <Button value="%" />
       <Button value="/" className="operation" />
     </div>
