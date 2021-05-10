@@ -1,13 +1,13 @@
 import React from 'react';
 import Buttonpanel from './Buttonpanel';
-import Result from './Result';
+import Display from './Display';
 
 function App() {
   return (
     <div className="main">
       <h1 className="text-center">Basic  Calculator</h1>
 
-      <Result />
+      <Display />
 
       <Buttonpanel />
     </div>

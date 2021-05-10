@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Result(props) {
+function Display(props) {
   return (
     <div className="result">
       {' '}
@@ -11,11 +11,11 @@ function Result(props) {
     </div>
   );
 }
-Result.defaultProps = {
-  result: 0,
+Display.defaultProps = {
+  result: '0',
 };
-Result.propTypes = {
-  result: PropTypes.number,
+Display.propTypes = {
+  result: PropTypes.string,
 };
 
-export default Result;
+export default Display;
