@@ -4,16 +4,14 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-function Button(props) {
-  return (
-    <button className="square" type="button">
-      {props.value}
-    </button>
-  );
-}
+const Button = (props) => (
+  <button className={props.name} type="button">
+    {props.name}
+  </button>
+);
 
 Button.propType = {
-  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Button;

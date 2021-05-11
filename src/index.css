@@ -1,24 +1,44 @@
-.main {
-  width: 30%;
+ .main {
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
 }
-
-.board-row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
+.board-row button{
+  width: 25%;
+  text-align: center;
+  padding: 5%;
 }
-
-.result {
+button:nth-child(4){
+  border-right: none;
+  background-color: rgb(68, 0, 255);
+  color: white;
+}
+.last>button:nth-child(1){
+ width: 50%;
+}
+.last>button:nth-child(3){
+  background-color: rgb(68, 0, 255);
+ }
+.Display {
   text-align: right;
+  background-color: rgb(126, 122, 122);
+  color: white;
+  width: 100%;
+  padding: 5%;
 }
 
 .text-center {
   text-align: center;
 }
+ @media (max-width: 567px){
+  .main {
+    width: 80%;
+  
+  }
+  .board-row button{
+    width: 25%;
+    text-align: center;
+    
+  }
 
-/* .buttons-div{
-  width: 40%;
-} */
+ }
