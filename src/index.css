@@ -1,29 +1,35 @@
- .main {
+.main {
   width: 40%;
   margin: auto;
 }
-.board-row button{
-  width: 25%;
-  text-align: center;
-  padding: 5%;
-}
-button{
+
+button {
   background-color: rgb(185, 180, 180);
   border: 1px solid rgb(231, 229, 229);
   font-size: 1.5rem;
 }
-button:nth-child(4){
+
+.board-row button {
+  width: 25%;
+  text-align: center;
+  padding: 5%;
+}
+
+button:nth-child(4) {
   border-right: none;
   background-color: rgb(68, 0, 255);
   color: white;
 }
-.last>button:nth-child(1){
- width: 50%;
+
+.last > button:nth-child(1) {
+  width: 50%;
 }
-.last>button:nth-child(3){
+
+.last > button:nth-child(3) {
   background-color: rgb(68, 0, 255);
   color: white;
- }
+}
+
 .Display {
   text-align: right;
   background-color: rgb(126, 122, 122);
@@ -35,7 +41,8 @@ button:nth-child(4){
 .text-center {
   text-align: center;
 }
-@media (max-width: 567px){
+
+@media (max-width: 567px) {
   .main {
     width: 80%;
   }

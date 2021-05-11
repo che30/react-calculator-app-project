@@ -1,17 +1,18 @@
 import React from 'react';
 import Buttonpanel from './Buttonpanel';
 import Display from './Display';
+import calculate from '../logic/calculate';
 import '../index.css';
 
-function App() {
-  return (
-    <div className="main">
-      <h1 className="text-center">Basic  Calculator</h1>
+calculate(1, 2, '-');
 
-      <Display />
+const App = () => (
+  <div className="main">
+    <h1 className="text-center">Basic  Calculator</h1>
 
-      <Buttonpanel />
-    </div>
-  );
-}
+    <Display />
+
+    <Buttonpanel />
+  </div>
+);
 export default App;
