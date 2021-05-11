@@ -1,24 +1,49 @@
 .main {
-  width: 30%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 40%;
+  margin: auto;
 }
 
-.board-row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
+button {
+  background-color: rgb(185, 180, 180);
+  border: 1px solid rgb(231, 229, 229);
+  font-size: 1.5rem;
 }
 
-.result {
+.board-row button {
+  width: 25%;
+  text-align: center;
+  padding: 5%;
+}
+
+button:nth-child(4) {
+  border-right: none;
+  background-color: rgb(68, 0, 255);
+  color: white;
+}
+
+.last > button:nth-child(1) {
+  width: 50%;
+}
+
+.last > button:nth-child(3) {
+  background-color: rgb(68, 0, 255);
+  color: white;
+}
+
+.Display {
   text-align: right;
+  background-color: rgb(126, 122, 122);
+  color: white;
+  width: 100%;
+  padding: 5%;
 }
 
 .text-center {
   text-align: center;
 }
 
-/* .buttons-div{
-  width: 40%;
-} */
+@media (max-width: 567px) {
+  .main {
+    width: 80%;
+  }
+}

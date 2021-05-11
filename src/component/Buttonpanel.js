@@ -4,33 +4,33 @@ import Button from './Button';
 const Buttonpanel = () => (
   <div className="buttons-div">
     <div className="board-row">
-      <Button value="AC" />
-      <Button value="+/-" />
-      <Button value="%" />
-      <Button value="/" className="operation" />
+      <Button name="AC" className="asee" />
+      <Button name="+/-" />
+      <Button name="%" />
+      <Button name="/" className="operation" />
     </div>
     <div className="board-row">
-      <Button value="7" />
-      <Button value="8" />
-      <Button value="9" />
-      <Button value="*" className="operation" />
+      <Button name="7" />
+      <Button name="8" />
+      <Button name="9" />
+      <Button name="*" className="operation" />
     </div>
     <div className="board-row">
-      <Button value="4" />
-      <Button value="5" />
-      <Button value="6" />
-      <Button value="-" className="operation" />
+      <Button name="4" />
+      <Button name="5" />
+      <Button name="6" />
+      <Button name="-" className="operation" />
     </div>
     <div className="board-row">
-      <Button value="1" />
-      <Button value="2" />
-      <Button value="3" />
-      <Button value="+" className="operation" />
+      <Button name="1" />
+      <Button name="2" />
+      <Button name="3" />
+      <Button name="+" className="operation" />
     </div>
-    <div className="board-row">
-      <span><renderButton name="0" /></span>
-      <renderButton value="." />
-      <renderButton value="=" className="operation" />
+    <div className="board-row last">
+      <Button name="0" />
+      <Button name="." />
+      <Button name="=" className="operation" />
     </div>
 
   </div>
