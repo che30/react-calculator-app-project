@@ -45,13 +45,13 @@ const Calculate = (inputdata, buttonName) => {
       if (operation !== null) {
         if (next === null) {
           next = `0${buttonName}`;
-        } else if (next.indexOf('.') === -1) {
+        } else if (!next.includes(buttonName)) {
           next += buttonName;
         }
       } else if (operation === null) {
         if (total === null) {
           total = `0${buttonName}`;
-        } else if (total.indexOf('.') !== -1) {
+        } else if (!total.includes(buttonName)) {
           total += buttonName;
         }
       }
