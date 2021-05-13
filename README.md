@@ -1,14 +1,17 @@
 
-
 # React Calculator
-![screenshot](./assets/endlessshotone.png)
+This is a calculator made with React, using stateful component class and stateless component function by passing props to functions from their parent component class.
+![screenshot](./img/endlessshotone.png)
 ## Built With
 - Javascript
 - React framework
 - Webpack
 
 ## Getting started
-   To get a local copy up and running follow these simple example steps.
+   To get a local copy up and running follow these simple example steps and type the necessary  highlited commands on your terminal.
+  1- Clone the project by typing `git clone git@github.com:che30/react-calculator-app-project.git` 
+  2- cd `react-calculator-app-project`
+  3- `npm run start`
 # Setup
   
 # TESTS
