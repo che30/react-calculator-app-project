@@ -3,6 +3,7 @@ import operate from './operate';
 
 const Calculate = (inputdata, buttonName) => {
   let { total, next, operation } = inputdata;
+  console.log(total, next, operation);
   switch (buttonName) {
     case '+':
     case '*':
@@ -11,6 +12,8 @@ const Calculate = (inputdata, buttonName) => {
       if (total !== null) {
         operation = buttonName;
       }
+      console.log('operations');
+      console.log(total, next, operation);
       break;
     case '0':
     case '1':
@@ -27,6 +30,8 @@ const Calculate = (inputdata, buttonName) => {
       } else if (operation !== null) {
         next === null ? next = buttonName : next += buttonName;
       }
+      console.log('case numbers');
+      console.log(total, next, operation);
       break;
     case 'AC':
       total = null;
@@ -57,12 +62,18 @@ const Calculate = (inputdata, buttonName) => {
       }
       break;
     case '+/-':
-      total *= -1;
+      if (!next) {
+        total *= -1;
+      }
+
       total.toString();
       if (next) {
         const result = next * -1;
         next = result.toString();
       }
+      console.log('case +/-');
+      console.log(total, next, operation);
+
       break;
     default:
       if (next && total) {
