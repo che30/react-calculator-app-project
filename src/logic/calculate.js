@@ -30,8 +30,6 @@ const Calculate = (inputdata, buttonName) => {
       } else if (operation !== null) {
         next === null ? next = buttonName : next += buttonName;
       }
-      console.log('case numbers');
-      console.log(total, next, operation);
       break;
     case 'AC':
       total = null;
@@ -43,8 +41,10 @@ const Calculate = (inputdata, buttonName) => {
         total /= 100;
         total.toString();
       } else if (total && next) {
-        operation = buttonName;
+        next /= 100;
       }
+      console.log('case percentage');
+      console.log(total, next, operation);
       break;
     case '.':
       if (operation !== null) {
