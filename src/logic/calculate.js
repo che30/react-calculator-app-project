@@ -44,18 +44,14 @@ const Calculate = (inputdata, buttonName) => {
     case '9':
       if (operation === null) {
         if (total === null) {
-          console.log('first appearance');
           total = buttonName;
         } else {
-          console.log('second appearance');
           total += buttonName;
         }
       } else if (operation !== null) {
         if (next === null) {
-          console.log('third appearance');
           next = buttonName;
         } else {
-          console.log('fourth appearance');
           next += buttonName;
         }
       }
