@@ -19,10 +19,10 @@ const Operate = (numberOne, numberTwo, operator) => {
       total = bigNumberOne.times(bigNumberTwo);
       break;
     case '/':
-      if (bigNumberTwo === 0) {
-        total = 'math error';
-      } else {
+      try {
         total = bigNumberOne.div(bigNumberTwo);
+      } catch (err) {
+        total = 'undefined';
       }
       break;
     case '%':
