@@ -28,7 +28,7 @@ class App extends React.Component {
       <div className="main">
         <h1 className="text-center">Basic  Calculator</h1>
 
-        <Display result={total} next={next} operation={operation} />
+        <Display total={total} next={next} operation={operation} />
 
         <Buttonpanel clickHandler={this.handleClick} />
       </div>

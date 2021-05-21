@@ -1,19 +1,36 @@
-/* eslint-disable no-unused-expressions */
 import operate from './operate';
 
 const Calculate = (inputdata, buttonName) => {
-  let { total, next, operation } = inputdata;
-  console.log(total, next, operation);
+  let {
+    total, next, operation,
+  } = inputdata;
   switch (buttonName) {
-    case '+':
-    case '*':
-    case '-':
+    case '+/-':
+      if (total && next) {
+        next *= -1;
+      } else if (total && !next) {
+        total *= -1;
+      }
+      break;
+    case '%':
+      if (total && !next) {
+        total /= 100;
+        total.toString();
+      }
+      break;
+    case 'AC':
+      total = null;
+      next = null;
+      operation = null;
+      break;
     case '/':
-      if (total !== null) {
+    case '*':
+    case '+':
+    case '-':
+      if (total || next) {
         operation = buttonName;
       }
-      console.log('operations');
-      console.log(total, next, operation);
+
       break;
     case '0':
     case '1':
@@ -26,25 +43,22 @@ const Calculate = (inputdata, buttonName) => {
     case '8':
     case '9':
       if (operation === null) {
-        total === null ? total = buttonName : total += buttonName;
+        if (total === null) {
+          console.log('first appearance');
+          total = buttonName;
+        } else {
+          console.log('second appearance');
+          total += buttonName;
+        }
       } else if (operation !== null) {
-        next === null ? next = buttonName : next += buttonName;
+        if (next === null) {
+          console.log('third appearance');
+          next = buttonName;
+        } else {
+          console.log('fourth appearance');
+          next += buttonName;
+        }
       }
-      break;
-    case 'AC':
-      total = null;
-      next = null;
-      operation = null;
-      break;
-    case '%':
-      if (total && !next) {
-        total /= 100;
-        total.toString();
-      } else if (total && next) {
-        next /= 100;
-      }
-      console.log('case percentage');
-      console.log(total, next, operation);
       break;
     case '.':
       if (operation !== null) {
@@ -60,20 +74,6 @@ const Calculate = (inputdata, buttonName) => {
           total += buttonName;
         }
       }
-      break;
-    case '+/-':
-      if (!next) {
-        total *= -1;
-      }
-
-      total.toString();
-      if (next) {
-        const result = next * -1;
-        next = result.toString();
-      }
-      console.log('case +/-');
-      console.log(total, next, operation);
-
       break;
     default:
       if (next && total) {

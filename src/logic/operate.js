@@ -19,7 +19,11 @@ const Operate = (numberOne, numberTwo, operator) => {
       total = bigNumberOne.times(bigNumberTwo);
       break;
     case '/':
-      total = bigNumberTwo === 0 ? 'Undefined' : bigNumberOne.div(bigNumberTwo);
+      if (bigNumberTwo === 0) {
+        total = 'math error';
+      } else {
+        total = bigNumberOne.div(bigNumberTwo);
+      }
       break;
     case '%':
       total = bigNumberOne.mod(bigNumberTwo);
