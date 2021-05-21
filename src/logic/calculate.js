@@ -30,6 +30,10 @@ const Calculate = (inputdata, buttonName) => {
       if (total || next) {
         operation = buttonName;
       }
+      if (total && next && operation) {
+        total = operate(total, next, operation);
+        next = null;
+      }
 
       break;
     case '0':
