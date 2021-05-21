@@ -27,12 +27,12 @@ const Calculate = (inputdata, buttonName) => {
     case '*':
     case '+':
     case '-':
-      if (total || next) {
-        operation = buttonName;
-      }
       if (total && next && operation) {
         total = operate(total, next, operation);
         next = null;
+      }
+      if (total || next) {
+        operation = buttonName;
       }
 
       break;
