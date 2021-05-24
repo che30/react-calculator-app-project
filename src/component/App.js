@@ -12,15 +12,19 @@ const App = () => {
   });
   const handleClick = (buttonName) => {
     const result = Calculate(calculator, buttonName);
+    console.log(result);
     setCalculator({ ...result });
   };
 
-  const result = calculator;
   return (
     <div className="main">
       <h1 className="text-center">Basic  Calculator</h1>
 
-      <Display result={result} />
+      <Display
+        total={calculator.total}
+        next={calculator.next}
+        operation={calculator.operation}
+      />
 
       <Buttonpanel clickHandler={handleClick} />
     </div>
