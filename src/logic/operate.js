@@ -3,31 +3,35 @@ import Big from 'big.js';
 const Operate = (numberOne, numberTwo, operator) => {
   const bigNumberOne = Big(numberOne);
   const bigNumberTwo = Big(numberTwo);
-  let result = {};
   let total = 0;
 
   switch (operator) {
     case '÷':
       total = bigNumberOne.div(bigNumberTwo);
-      result = { total, next: total, operator };
       break;
     case '-':
       total = bigNumberOne.minus(bigNumberTwo);
-      result = { total, next: total, operator };
       break;
     case '+':
       total = bigNumberOne.plus(bigNumberTwo);
-      result = { total, next: total, operator };
       break;
     case '*':
       total = bigNumberOne.times(bigNumberTwo);
-      result = { total, next: total, operator };
+      break;
+    case '/':
+      try {
+        total = bigNumberOne.div(bigNumberTwo);
+      } catch (err) {
+        total = 'undefined';
+      }
       break;
     case '%':
-      return { total: bigNumberOne, next: bigNumberTwo.mod(100), operator };
+      total = bigNumberOne.mod(bigNumberTwo);
+      break;
     default:
-      result = { total: bigNumberOne, next: bigNumberTwo, operator };
+      throw Error('Unknown operation!');
   }
+  const result = total.toString();
   return result;
 };
 export default Operate;
