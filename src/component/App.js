@@ -18,7 +18,6 @@ const App = () => {
 
   return (
     <div className="main">
-      {/* <h1 className="text-center">Basic  Calculator</h1> */}
 
       <Display
         total={calculator.total}
