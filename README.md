@@ -3,7 +3,7 @@
 This is a calculator made with React, using stateful component class and stateless component function by passing props to functions from their parent component class.
 
 # Screenshot
-![screenshot](./public/img/react_calculator.png)
+![screenshot]('../assets/img/react_calculator.png')
 ## Built With
 - Javascript
 - React framework
