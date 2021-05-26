@@ -24,7 +24,6 @@ const App = () => {
         next={calculator.next}
         operation={calculator.operation} 
       />
-  d
       <Buttonpanel clickHandler={handleClick} />
     </div>
   );
