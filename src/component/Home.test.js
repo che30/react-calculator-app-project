@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Quote from '../Quote.js';
+import Home from './Home.js';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<Quote/>)
+    .create(<Home/>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
