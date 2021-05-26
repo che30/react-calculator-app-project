@@ -22,9 +22,9 @@ const App = () => {
       <Display
         total={calculator.total}
         next={calculator.next}
-        operation={calculator.operation}
+        operation={calculator.operation} 
       />
-
+  d
       <Buttonpanel clickHandler={handleClick} />
     </div>
   );
