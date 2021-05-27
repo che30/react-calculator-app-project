@@ -61,5 +61,18 @@ it('Divide two numbers', async ()=>{
   const display = await screen.findByText(/10/);
   expect(display).toBeInTheDocument();
 })
+it('check if +/- is working', async ()=>{
+  await userEvent.click(screen.getByText('2'));
+  await userEvent.click(screen.getByText('+/-'));
+  const display = await screen.findByText(/-2/);
+  expect(display).toBeInTheDocument();
+})
+it('check if AC is working', async ()=>{
+  await userEvent.click(screen.getByText('2'));
+  await userEvent.click(screen.getByText('3'));
+  await userEvent.click(screen.getByText('AC'));
+  expect(screen.queryByText('23')).toBeNull();
+})
+
 
 })
