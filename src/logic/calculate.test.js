@@ -16,20 +16,16 @@ describe('Calculate method', () => {
   it('sum and returns result on equals', () => {
     expect(Calculate({ total: '1', next: '2', operation: '-' }, '=')).toEqual({ total: '-1', next: null, operation: null });
   });
-  it('appends a decimal',()=>{
-    expect(Calculate({total:'1',next:'2',operation:'-'},'.')).toEqual({ total: '1', next: '2.', operation: '-' });
-     
-   })
-   it('converts number to percent',()=>{
-    expect(Calculate({total:'1',next:null,operation:null},"%")).toEqual({ total: 0.01, next: null, operation: null });
-     
-   })
-   it('Multiplies 2  numbers',()=>{
-    expect(Calculate({total:'1',next:'2',operation:"*"},"=")).toEqual({ total: '2', next: null, operation: null });
-     
-   })
-   it('Attaches negative number to a number',()=>{
-    expect(Calculate({total:'1',next:'2',operation:"*"},"+/-")).toEqual({ total: '1', next: -2, operation: '*' });
-     
-   })
+  it('appends a decimal', () => {
+    expect(Calculate({ total: '1', next: '2', operation: '-' }, '.')).toEqual({ total: '1', next: '2.', operation: '-' });
+  });
+  it('converts number to percent', () => {
+    expect(Calculate({ total: '1', next: null, operation: null }, '%')).toEqual({ total: 0.01, next: null, operation: null });
+  });
+  it('Multiplies 2  numbers', () => {
+    expect(Calculate({ total: '1', next: '2', operation: '*' }, '=')).toEqual({ total: '2', next: null, operation: null });
+  });
+  it('Attaches negative number to a number', () => {
+    expect(Calculate({ total: '1', next: '2', operation: '*' }, '+/-')).toEqual({ total: '1', next: -2, operation: '*' });
+  });
 });
