@@ -61,7 +61,16 @@ it('Divide two numbers', async ()=>{
   const display = await screen.findByText(/10/);
   expect(display).toBeInTheDocument();
 })
-it('check if +/- is working', async ()=>{
+it('Divide a number by 0', async ()=>{
+  await userEvent.click(screen.getByText('2'));
+  await userEvent.click(screen.getByText('0'));
+  await userEvent.click(screen.getByText('/'))
+  await userEvent.click(screen.getByText('0'));
+  await userEvent.click(screen.getByText('='));
+  const display = await screen.findByText(/undefined/);
+  expect(display).toBeInTheDocument();
+})
+it('Make a number negative', async ()=>{
   await userEvent.click(screen.getByText('2'));
   await userEvent.click(screen.getByText('+/-'));
   const display = await screen.findByText(/-2/);
@@ -73,6 +82,13 @@ it('check if AC is working', async ()=>{
   await userEvent.click(screen.getByText('AC'));
   expect(screen.queryByText('23')).toBeNull();
 })
-
+it('Turns a negative number into positive number', async () => {
+  await userEvent.click(screen.getByText('2'));
+  await userEvent.click(screen.getByText('0'));
+  await userEvent.click(screen.getByText('+/-'));
+  await userEvent.click(screen.getByText('+/-'));
+  const display = await screen.findByText(/20/);
+  expect(display).toBeInTheDocument();
+});
 
 })
