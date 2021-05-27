@@ -1,8 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {render, screen} from '@testing-library/react'
-import '@testing-library/jest-dom'
-
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+// import regeneratorRuntime from 'regenerator-runtime';
+import Display from './Display';
 
 import App from './App';
 
@@ -12,10 +14,52 @@ it('renders correctly', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
-test('type', () => {
-  render(<App />)
+describe('Calculator operations', () => {
+  beforeEach(() => {
+    render(<App />);
+  });
+it('type', () => {
   const buttonEl = screen.getByText(/1/i);
   expect(buttonEl).toBeInTheDocument();
-  // userEvent.type(screen.getByRole('textbox'), 'Hello,{enter}World!')
-  // expect(screen.getByRole('textbox')).toHaveValue('Hello,\nWorld!')
+})
+it('add two numbers', async ()=>{
+  await userEvent.click(screen.getByText('1'));
+    await userEvent.click(screen.getByText('2'));
+    await userEvent.click(screen.getByText('+'))
+    await userEvent.click(screen.getByText('3'));
+    await userEvent.click(screen.getByText('4'));
+    await userEvent.click(screen.getByText('='));
+    const display = await screen.findByText(/46/);
+    expect(display).toBeInTheDocument();
+})
+it('subtract two numbers', async ()=>{
+  await userEvent.click(screen.getByText('1'));
+    await userEvent.click(screen.getByText('2'));
+    await userEvent.click(screen.getByText('-'))
+    await userEvent.click(screen.getByText('3'));
+    await userEvent.click(screen.getByText('4'));
+    await userEvent.click(screen.getByText('='));
+    const display = await screen.findByText(/-22/);
+    expect(display).toBeInTheDocument();
+})
+it('Multiply two numbers', async ()=>{
+  await userEvent.click(screen.getByText('1'));
+    await userEvent.click(screen.getByText('2'));
+    await userEvent.click(screen.getByText('*'))
+    await userEvent.click(screen.getByText('3'));
+    await userEvent.click(screen.getByText('4'));
+    await userEvent.click(screen.getByText('='));
+    const display = await screen.findByText(/408/);
+    expect(display).toBeInTheDocument();
+})
+it('Divide two numbers', async ()=>{
+  await userEvent.click(screen.getByText('2'));
+  await userEvent.click(screen.getByText('0'));
+  await userEvent.click(screen.getByText('/'))
+  await userEvent.click(screen.getByText('2'));
+  await userEvent.click(screen.getByText('='));
+  const display = await screen.findByText(/10/);
+  expect(display).toBeInTheDocument();
+})
+
 })
